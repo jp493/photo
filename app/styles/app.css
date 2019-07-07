@@ -1,0 +1,52 @@
+nav {
+    padding-top: 15px;
+} 
+nav ul {
+    float: right;
+}
+nav li {
+    padding: 0 20px;
+}
+li.no-list-style {
+    float: left;
+    list-style: none;
+    padding: 2px;
+}
+.marketing ul {
+    width: 100%;
+}
+.jumbotron {
+    padding: 1rem 2rem;
+}
+.img-thumbnail{
+    height: 100px;
+}
+.hide {
+    display: none
+}
+.ui-paginator {
+    width: 92%;
+}
+.next-btn {
+    float:right;
+    padding-right: 2rem;
+}
+.previous-btn {
+    padding-left: 2.5rem;
+}
+.image-section {
+    width: 50%;
+    float: left;
+    padding-right: 20px;
+}
+.footer {
+    float:left;
+    width: 100%;
+    text-align: center;
+    padding-top:20px;
+}
+@media print {
+	.ui-paginator {
+		display: none !important;
+	}
+}

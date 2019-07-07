@@ -1,0 +1,20 @@
+<div class="jumbotron">
+    <h1>Intruction</h1>
+    <p class="lead">Welcome to JPeng's online photo store...The Lorem Ipsum for photos.</p>
+    <p><button actions="" class="btn btn-sm btn-success" role="button">View My Cart</button></p>
+</div>
+<div class="row marketing">
+    {{ui-paginator
+    offset=listObject.offset
+    hasNext=hasNextPage
+    hasPrevious=hasPreviousPage
+    next="nextPage"
+    previous="previousPage"}}
+    <ul>
+    {{#each listObject.newList as |item index|}}
+        <li class="col-sm-3 no-list-style">
+            {{#link-to "lists.product" item.id}}<img src={{item.data.download_url}} class="img-thumbnail" width="150" height="100" alt={{item.data.author}}>{{/link-to}}
+        </li>
+    {{/each}}
+    </ul>
+</div>

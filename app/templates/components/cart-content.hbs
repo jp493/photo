@@ -1,0 +1,10 @@
+<div class="jumbotron">
+    Now you have items {{items.length}} in your cart.
+</div>
+<ul>
+    {{#each items as |item|}}
+        <li>
+            {{item.name}} <button class="btn btn-lg btn-link" {{action "remove" item }}> Remove </button>
+        </li>
+    {{/each}}
+</ul>
