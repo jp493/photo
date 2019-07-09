@@ -11,7 +11,7 @@ Router.map(function() {
     this.route('index', { path: '/' });
     this.route('product', { path: 'product/:id' });
   });
-  this.route('my-cart');
+  this.route('orders');
 });
 
 export default Router;

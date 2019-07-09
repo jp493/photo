@@ -1,10 +1,36 @@
-<div class="jumbotron">
-    Now you have items {{items.length}} in your cart.
-</div>
-<ul>
-    {{#each items as |item|}}
-        <li>
-            {{item.name}} <button class="btn btn-lg btn-link" {{action "remove" item }}> Remove </button>
+<label for="size">Size:</label>
+<select name="size" onchange={{action "handleChange" value="target.value"}}>
+    <option value="">Select size ...</option>
+    <option value="1">Small</option>
+    <option value="2">Medium</option>
+    <option value="3">Large</option>
+    <option value="4">X-Large</option>
+</select>
+<br>
+{{#unless price}}
+    <div class="alert alert-warning">
+        Please select size.
+    </div>
+{{else}}
+{{#if price}}
+    <p>Price: ${{price}}</p>
+{{/if}}
+<p><button {{action "add" model}} class="btn btn-lg btn-info" role="button">Add to Cart</button></p>
+    <div class="alert alert-info">
+        {{#if items.length}}
+            <ul class="nav nav-pills">
+                <li class="active">Now you have added <span class="badge">{{items.length}} item</span> in your cart.</li>
+            </ul>
+        {{else}}
+            You have empty cart.
+        {{/if}}
+    </div>
+{{/unless}}
+<ul>{{log this.cart.items}}
+    {{#each this.cart.items as |item|}}
+        <li>product:{{item.product.firstObject.author}}<br>
+            size: {{item.size}}<br>
+            price:{{item.price}} <button class="btn btn-lg btn-link" {{action "remove" item }}> Remove </button>
         </li>
     {{/each}}
 </ul>
