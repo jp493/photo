@@ -7,6 +7,20 @@ nav ul {
 nav li {
     padding: 0 20px;
 }
+ul.cart-list {
+    line-height: 30px;
+    list-style: none;
+    font-size:14px;
+    padding-left:8px;
+    font-style: italic;
+}
+.btn.remove {
+    float: right;
+}
+input.select {
+    font-size: 13px;
+    width: 200px;
+}
 li.no-list-style {
     float: left;
     list-style: none;

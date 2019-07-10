@@ -23,8 +23,7 @@ export default Component.extend({
 		return 'btn btn-lg btn-link next-btn'+ (this.get('hasNext') ? '' : ' hide');
     }),
 
-    actions: {
-        
+    actions: {   
 		next() {
 			this.sendAction('next');
         },

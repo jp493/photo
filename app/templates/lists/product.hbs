@@ -1,6 +1,10 @@
-<p>{{model.author}}</p>
 <div class="image-section">
     <img src={{model.download_url}} width="100%">
+    <br/>
+    <br/>
+    <p><b>Author: </b>{{model.author}}</p>
+    <p><b>Width: </b>{{model.width}}px</p>
+    <p><b>Height: </b>{{model.height}}px</p>
 </div>
 <div class="description-section">
     {{cart-content items=items model=model}}

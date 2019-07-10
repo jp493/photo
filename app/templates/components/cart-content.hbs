@@ -1,10 +1,10 @@
-<label for="size">Size:</label>
+<label for="size"><b>Size: </b></label>
 <select name="size" onchange={{action "handleChange" value="target.value"}}>
     <option value="">Select size ...</option>
-    <option value="1">Small</option>
-    <option value="2">Medium</option>
-    <option value="3">Large</option>
-    <option value="4">X-Large</option>
+    <option value="Small">Small</option>
+    <option value="Medium">Medium</option>
+    <option value="Large">Large</option>
+    <option value="XLarge">X-Large</option>
 </select>
 <br>
 {{#unless price}}
@@ -13,24 +13,27 @@
     </div>
 {{else}}
 {{#if price}}
-    <p>Price: ${{price}}</p>
-{{/if}}
-<p><button {{action "add" model}} class="btn btn-lg btn-info" role="button">Add to Cart</button></p>
+    <p><b>Price: </b>${{price}}</p>
+    <p><button {{action "add" model}} class="btn btn-lg btn-info" role="button">Add to Cart</button></p>
     <div class="alert alert-info">
         {{#if items.length}}
             <ul class="nav nav-pills">
                 <li class="active">Now you have added <span class="badge">{{items.length}} item</span> in your cart.</li>
             </ul>
+            <div class="list-section">
+                <ul class="cart-list">
+                    {{#each this.cart.items as |item|}}
+                        <li><b>product:</b> {{item.product.author}}</li>
+                        <li><b>size: </b>{{item.size}}</li>
+                        <li><b>price: </b>${{item.price}}.00<button class="btn btn-sm btn-info remove" {{action "remove" item }}> Remove </button></li>
+                        <hr/>
+                    {{/each}}
+                </ul>
+                <p><b>Total: </b>${{total}}.00</p>
+            </div>
         {{else}}
             You have empty cart.
         {{/if}}
     </div>
+{{/if}}
 {{/unless}}
-<ul>{{log this.cart.items}}
-    {{#each this.cart.items as |item|}}
-        <li>product:{{item.product.firstObject.author}}<br>
-            size: {{item.size}}<br>
-            price:{{item.price}} <button class="btn btn-lg btn-link" {{action "remove" item }}> Remove </button>
-        </li>
-    {{/each}}
-</ul>

@@ -6,6 +6,6 @@ export default Route.extend({
 
     model(){
         let items = this.get('cart.items');
-        return items;//[{name:'apple'}, {name:'banana'}, {name:'cherry'}];
+        return items;
 	}
 });

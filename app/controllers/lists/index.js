@@ -42,7 +42,6 @@ export default Controller.extend({
                 j++;
             }
         });
-        // return _newListObj.firstObject;
         return _newListObj.find(item => item.offset === this.get('offset'));
     }),
 

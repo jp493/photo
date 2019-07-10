@@ -1,3 +1,22 @@
-{{#each cart.items as |item|}}
-  {{item.size}} -- {{item.price}}
-{{/each}}
+
+<div class="alert alert-info">
+    {{#if cart.items.length}}
+        <ul class="nav">
+            <li class="active"><b>Thanks for shopping! </b>You have total <span class="badge">{{cart.items.length}} items</span> in your cart.</li>
+        </ul>
+        <br/>
+        <div class="list-section">
+            <ul class="cart-list">
+                {{#each this.cart.items as |item|}}
+                    <li><b>product:</b> {{item.product.author}}</li>
+                    <li><b>size: </b>{{item.size}}</li>
+                    <li><b>price: </b>${{item.price}}.00<button class="btn btn-sm btn-info remove" {{action "remove" item }}> Remove </button></li>
+                    <hr/>
+                {{/each}}
+            </ul>
+            <p><b>Total: </b>${{total}}.00</p> <button class="btn btn-sm btn-danger empty" {{action "empty" item }}> Empty Cart </button>
+        </div>
+    {{else}}
+        You have empty cart.
+    {{/if}}
+</div>
