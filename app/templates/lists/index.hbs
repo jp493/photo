@@ -1,15 +1,14 @@
 <div class="jumbotron">
-    <h1>Intruction</h1>
+    <h1>Introduction</h1>
     <p class="lead">Welcome to JPeng's online photo store...The Lorem Ipsum for photos.</p>
-    <p><button actions="" class="btn btn-sm btn-success" role="button">View My Cart</button></p>
 </div>
 <div class="row marketing">
     {{ui-paginator
     offset=listObject.offset
     hasNext=hasNextPage
     hasPrevious=hasPreviousPage
-    next="nextPage"
-    previous="previousPage"}}
+    nextAction=(action "nextPage")
+    previousAction=(action "previousPage")}}
     <ul>
     {{#each listObject.newList as |item index|}}
         <li class="col-sm-3 no-list-style">

@@ -25,11 +25,11 @@ export default Component.extend({
 
     actions: {   
 		next() {
-			this.sendAction('next');
+			this.nextAction();
         },
         
 		previous() {
-			this.sendAction('previous');
+			this.previousAction();
 		}
 	}
 });
